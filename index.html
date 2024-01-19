@@ -3,26 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>n進数タイマー</title>
+    <title>n進数タイマー</title><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap" rel="stylesheet">
     <style>
-        body{
-            background-color: black;
-            color: white;
-        }
         #timer-outer{
-            width: 100%;
             position:absolute;
-            top: 10%;
-            left: 0%;
+            top: 30%;
+            left: 30%;
+        }
+        #timer-inner{
+            width: 600px;
+            height:300px;
+            margin-top: 10%;
             text-align: center;
+            border-radius: 10px;
+            border: solid 1px black;
+        }
+        #timer-border{
+            margin-top: 9px;
+            margin-left: 9px;
+            width: 580px;
+            height:280px;
+            background-color: rgb(198, 198, 198);
+            border-radius: 10px;
+            border: solid 2px black;
         }
         #timer{
+            font-family: 'Zen Old Mincho', serif;
+            position:absolute;
+            top: -40%;
+            left: 20%;
             font-size: 200px;
         }
         #label{
             position:absolute;
             top: 0;
             left: 45%;
+        }
+
+        #t-number{
+            font-family: 'Zen Old Mincho', serif;
+            position:absolute;
+            top: 0%;
+            left: 45%;
+            font-size: 100px;
+            text-align: center;
         }
     </style>
 </head>
@@ -33,8 +59,13 @@
         <button type="button" onclick="start()">スタート</button>
     </div> 
     <p style="font-size:30px;" id="label">n進数タイマー</p>
+    <p id="t-number"></p>
     <div id="timer-outer">
-        <p id="timer">000</p>
+        <div id="timer-inner">
+            <div id="timer-border">
+                <p id="timer">000</p>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

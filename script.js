@@ -7,12 +7,13 @@ function start(){
     base = document.getElementById('base').value;
     if(!base){
         alert('基数を入力してください');
-    }else if(base>10){
-        alert('基数は10以下にしてください');
-    }{
+    }else if(base > 10||base < 2){
+        alert('基数は2以上10以下の整数にしてください');
+    }else{
         reset = base**3 -1;
         startTime = Date.now();
         n=0;
+        document.getElementById('t-number').innerText="T"+base;
     countUp();
     }
 }
