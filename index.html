@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n進数タイマー</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+        #timer-outer{
+            width: 100%;
+            position:absolute;
+            top: 10%;
+            left: 0%;
+            text-align: center;
+        }
+        #timer{
+            font-size: 200px;
+        }
+        #label{
+            position:absolute;
+            top: 0;
+            left: 45%;
+        }
+    </style>
+</head>
+<body>
+    <div id="setting-block">
+        <label for="base">基数</label>
+        <input id="base" type="number">
+        <button type="button" onclick="start()">スタート</button>
+    </div> 
+    <p style="font-size:30px;" id="label">n進数タイマー</p>
+    <div id="timer-outer">
+        <p id="timer">000</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
