@@ -7,12 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap" rel="stylesheet">
     <style>
-        #timer-outer{
-            position:absolute;
-            top: 30%;
-            left: 30%;
-        }
         #timer-inner{
+            margin: 0 auto;
             width: 600px;
             height:300px;
             margin-top: 10%;
@@ -31,29 +27,34 @@
         }
         #timer{
             font-family: 'Zen Old Mincho', serif;
-            position:absolute;
-            top: -40%;
-            left: 20%;
+            margin: 0 auto;
             font-size: 200px;
-        }
-        #label{
-            position:absolute;
-            top: 0;
-            left: 45%;
         }
 
         #t-number{
             font-family: 'Zen Old Mincho', serif;
-            position:absolute;
-            top: 0%;
-            left: 45%;
-            font-size: 100px;
+            width: 100vh;
+            height: 50px;
+            font-size: 50px;
             text-align: center;
         }
+        #setting-block{
+            width: 100vh;
+        }
         #exp{
-            position:absolute;
-            top: 0;
-            left: 85%;
+            margin-left: 50px;
+        }
+        input{
+            width: 100px;
+            height: 50px;
+        }
+        button{
+            width: 100px;
+            height: 55px;
+            font-size: large;
+        }
+        label{
+            font-size: large;
         }
     </style>
 </head>
@@ -64,8 +65,7 @@
         <button type="button" onclick="start()" id="button">スタート</button>
         <a href="https://github.com/Gobousei/kyo-te-Timer/blob/main/README.md" id="exp">n進数タイマーとは</a>
     </div> 
-    <p style="font-size:30px;" id="label">n進数タイマー</p>
-    <p id="t-number"></p>
+    <p id="t-number">n進数タイマー</p>
     <div id="timer-outer">
         <div id="timer-inner">
             <div id="timer-border">
