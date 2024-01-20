@@ -4,18 +4,28 @@ var startTime;
 var reset;
 var n=0;
 var count=0;
+var pause=false;
+var repeat;
 function start(){
     base = document.getElementById('base').value;
+    if(!pause){
+        document.getElementById('button').innerText='停止';
     if(!base){
         alert('基数を入力してください');
     }else if(base > 10||base < 2){
         alert('基数は2以上10以下の整数にしてください');
     }else{
+        pause=true;
         startTime = Date.now();
         n=0;
         document.getElementById('t-number').innerText="T"+base;
     countUp();
     }
+}else{
+    document.getElementById('button').innerText='スタート';
+    pause=false;
+    clearTimeout(repeat);
+}
 }
 function countUp() {
     document.getElementById('cout').innerText='リセット回数:'+count;
@@ -31,7 +41,7 @@ function countUp() {
         n=1;
         startTime = Date.now();
     }
-      setTimeout(() => {
+      repeat = setTimeout(() => {
         countUp();
     }, 1000);
   }
