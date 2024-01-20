@@ -2,7 +2,8 @@ var timer = document.getElementById('timer');
 var base;
 var startTime;
 var reset;
-var n;
+var n=0;
+var count=0;
 function start(){
     base = document.getElementById('base').value;
     if(!base){
@@ -10,7 +11,6 @@ function start(){
     }else if(base > 10||base < 2){
         alert('基数は2以上10以下の整数にしてください');
     }else{
-        reset = base**3 -1;
         startTime = Date.now();
         n=0;
         document.getElementById('t-number').innerText="T"+base;
@@ -18,23 +18,20 @@ function start(){
     }
 }
 function countUp() {
+    document.getElementById('cout').innerText='リセット回数:'+count;
     const d = new Date(Date.now()-startTime);
+    reset = base**3 -2 + n;
     var time = Number((d.getSeconds()-n).toString(base));
     console.log(d.getSeconds()-n);
     const s=String(time).padStart(3,"0");
     timer.textContent = s;
-    console.log(d.getSeconds()-reset-n);
 
-    if(d.getSeconds()<reset+n){
-        setTimeout(() => {
-            countUp();
-        }, 1000);
-    }else{
+    if(d.getSeconds()>reset){
+        count+=1;
         n=1;
         startTime = Date.now();
-      console.log(startTime);
+    }
       setTimeout(() => {
         countUp();
     }, 1000);
-    }
   }
